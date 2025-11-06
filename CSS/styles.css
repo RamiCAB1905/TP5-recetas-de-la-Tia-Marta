@@ -1,0 +1,246 @@
+/*
+ * COMENTARIOS CSS: SECCIÓN DE ESTILOS GLOBALES 
+ * Define las fuentes, el tamaño base y el modelo de caja.
+ */
+:root {
+    /*  Propiedades de color: Hexadecimal y RGB  */
+    --color-primary: #a52a2a; /* Rojo Marrón (Hexadecimal) */
+    --color-secondary: rgb(240, 240, 240); /* Gris muy claro (RGB) */
+    --color-text: #333;
+    --color-light: #fff;
+    --color-dark: #1e1e1e;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    color: var(--color-text);
+    background-color: var(--color-light);
+    line-height: 1.6;
+}
+
+main {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/*
+ *  COMENTARIOS CSS: SECCIÓN DE TIPOGRAFÍA Y ENLACES 
+ * Estilos para títulos y la aplicación de estados de enlace.
+ */
+h1, h2, h3, h4 {
+    margin-bottom: 15px;
+    color: var(--color-dark);
+}
+
+/*  Estilos para los estados de enlaces */
+a {
+    color: var(--color-primary);
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--color-dark); /* Cambio de color al pasar el ratón */
+    text-decoration: underline;
+}
+
+a:visited {
+    color: #800080; /* Un color morado para enlaces visitados */
+}
+
+a:active {
+    color: #ff4500; /* Un color naranja al hacer clic */
+}
+
+/*
+ *  COMENTARIOS CSS: SECCIÓN DE CABECERA Y NAVEGACIÓN 
+ * Uso de flexbox para el diseño de la cabecera.
+ */
+.main-header, .sub-header {
+    background-color: var(--color-primary);
+    color: var(--color-light);
+    /*  Uso de flexbox para la cabecera */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    width: 50px;
+    height: 50px;
+    /*  Propiedad de borde  */
+    border-radius: 50%;
+    /*  Propiedad de margen  */
+    margin-right: 10px;
+}
+
+.nav-list {
+    /*  Estilos para listas  */
+    list-style: none;
+    display: flex;
+}
+
+.nav-list li {
+    margin-left: 20px;
+}
+
+.nav-list a {
+    color: var(--color-light);
+    /*  Propiedad de padding  */
+    padding: 5px 10px;
+    /* Evita que los enlaces de navegación tengan el estilo */
+    color: var(--color-light) !important;
+}
+
+.nav-list a.active {
+    border-bottom: 2px solid var(--color-secondary);
+}
+
+/*
+ *  COMENTARIOS CSS: SECCIÓN DE BOTONES Y FORMULARIO
+ * Estilos generales para botones y el formulario de contacto.
+ */
+/*  Selector de clase para botones */
+.button {
+    display: inline-block;
+    background-color: var(--color-primary);
+    color: var(--color-light) !important; /* !important para anular el estilo a:visited */
+    padding: 10px 15px;
+    border-radius: 5px;
+    text-align: center;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/*  Estilo para hover en botones */
+.button:hover {
+    background-color: #8b2323; /* Tono más oscuro de marrón */
+    text-decoration: none;
+}
+
+.recipe-suggestion-form {
+    background-color: var(--color-secondary);
+    /*  Propiedad de padding */
+    padding: 30px;
+    /*  Propiedad de borde */
+    border-radius: 8px;
+    /*  Propiedad de margen  */
+    margin-top: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+/*  Selector de ID para el título del sitio  */
+#site-title {
+    color: var(--color-light);
+}
+
+/*  Estilos para formularios  */
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/*
+ *  COMENTARIOS CSS: SECCIÓN DE LAYOUT 
+ * Implementación de grid para las recetas destacadas.
+ */
+.recipes-grid {
+    /*  Uso de grid para organizar las recetas destacadas  */
+    display: grid;
+    /* Crea dos columnas de igual tamaño */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    /*  Propiedad de margen  */
+    margin-top: 20px;
+}
+
+.recipe-card {
+    background-color: var(--color-secondary);
+    /*  Propiedad de padding */
+    padding: 15px;
+    /*  Propiedad de borde */
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    text-align: center;
+    transition: transform 0.2s;
+}
+
+.recipe-card:hover {
+    transform: translateY(-5px);
+}
+
+.recipe-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    margin-bottom: 10px;
+    border-radius: 4px;
+}
+
+.category-list {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    padding: 10px 0;
+}
+
+.category-list a {
+    background-color: #f0f8ff;
+    padding: 8px 15px;
+    border-radius: 20px;
+    border: 1px solid #cceeff;
+    transition: background-color 0.3s;
+}
+
+.category-list a:hover {
+    background-color: #e0f0ff;
+}
+
+.recipe-main-img {
+    width: 100%;
+    max-height: 400px;
+    object-fit: cover;
+    margin: 20px 0;
+    border-radius: 8px;
+}
+
+/*
+ *  COMENTARIOS CSS: SECCIÓN DE FOOTER
+ * Estilos para el pie de página.
+ */
+.main-footer {
+    background-color: var(--color-dark);
+    color: var(--color-secondary);
+    text-align: center;
+    /* Propiedad de padding  */
+    padding: 15px;
+    /*  Propiedad de margen  */
+    margin-top: 40px;
+}
