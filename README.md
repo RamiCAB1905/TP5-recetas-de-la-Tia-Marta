@@ -23,4 +23,4 @@ pasos.
 externos.
 - Comentarios en el código para facilitar el mantenimiento.
 ## ‍ Autor
-[Tu Nombre] - 6°G - Laboratorio de Programación
+[Ramiro Camara] - 6°G - Laboratorio de Programación
